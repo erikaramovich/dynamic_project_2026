@@ -30,6 +30,7 @@ This project implements a **House Price Prediction System** using multiple machi
 ### Prerequisites
 - Python 3.9 or higher
 - pip (Python package manager)
+- TensorFlow 2.15.0 or higher (for Keras 3.0+ support)
 
 ### Installation
 

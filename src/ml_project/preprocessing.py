@@ -96,8 +96,21 @@ class DataPreprocessor:
         """
         Encode categorical features using Label Encoding.
         
-        In production, you might want to use One-Hot Encoding or Target Encoding.
-        This is a simpler approach for learning purposes.
+        Note for learners:
+        - Label Encoding: Assigns integers to categories (e.g., 'A'->0, 'B'->1)
+          - Simple and memory-efficient
+          - Works well with tree-based models (Random Forest, XGBoost)
+          - May not work well with linear models (implies ordinal relationship)
+        
+        - One-Hot Encoding: Creates binary columns for each category
+          - Better for linear models
+          - More memory-intensive
+          - Can be added by setting use_onehot=True in config
+        
+        For production systems, consider:
+        - One-Hot Encoding for linear models
+        - Target Encoding for high-cardinality features
+        - Feature hashing for very large categorical spaces
         
         Args:
             X (pd.DataFrame): Features
