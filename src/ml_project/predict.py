@@ -8,17 +8,30 @@ import sys
 import numpy as np
 import pandas as pd
 
-from config import (
-    LINEAR_MODEL_PATH,
-    RF_MODEL_PATH,
-    NN_MODEL_PATH,
-    SCALER_PATH,
-    LOG_LEVEL,
-    LOG_FORMAT,
-    LOG_FILE
-)
-from models import LinearRegressionModel, RandomForestModel, NeuralNetworkModel
-from preprocessing import DataPreprocessor
+try:
+    from .config import (
+        LINEAR_MODEL_PATH,
+        RF_MODEL_PATH,
+        NN_MODEL_PATH,
+        SCALER_PATH,
+        LOG_LEVEL,
+        LOG_FORMAT,
+        LOG_FILE
+    )
+    from .models import LinearRegressionModel, RandomForestModel, NeuralNetworkModel
+    from .preprocessing import DataPreprocessor
+except ImportError:
+    from config import (
+        LINEAR_MODEL_PATH,
+        RF_MODEL_PATH,
+        NN_MODEL_PATH,
+        SCALER_PATH,
+        LOG_LEVEL,
+        LOG_FORMAT,
+        LOG_FILE
+    )
+    from models import LinearRegressionModel, RandomForestModel, NeuralNetworkModel
+    from preprocessing import DataPreprocessor
 
 # Set up logging
 logging.basicConfig(

@@ -7,17 +7,30 @@ import logging
 import sys
 from pathlib import Path
 
-from config import (
-    HOUSING_DATA_PATH,
-    LOG_LEVEL,
-    LOG_FORMAT,
-    LOG_FILE,
-    VALIDATION_SIZE
-)
-from data_loader import load_data
-from preprocessing import DataPreprocessor, split_data
-from models import LinearRegressionModel, RandomForestModel, NeuralNetworkModel
-from evaluate import evaluate_model, compare_models, print_prediction_summary
+try:
+    from .config import (
+        HOUSING_DATA_PATH,
+        LOG_LEVEL,
+        LOG_FORMAT,
+        LOG_FILE,
+        VALIDATION_SIZE
+    )
+    from .data_loader import load_data
+    from .preprocessing import DataPreprocessor, split_data
+    from .models import LinearRegressionModel, RandomForestModel, NeuralNetworkModel
+    from .evaluate import evaluate_model, compare_models, print_prediction_summary
+except ImportError:
+    from config import (
+        HOUSING_DATA_PATH,
+        LOG_LEVEL,
+        LOG_FORMAT,
+        LOG_FILE,
+        VALIDATION_SIZE
+    )
+    from data_loader import load_data
+    from preprocessing import DataPreprocessor, split_data
+    from models import LinearRegressionModel, RandomForestModel, NeuralNetworkModel
+    from evaluate import evaluate_model, compare_models, print_prediction_summary
 
 # Set up logging
 logging.basicConfig(

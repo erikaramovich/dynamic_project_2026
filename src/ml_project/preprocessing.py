@@ -10,14 +10,24 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 import joblib
 import logging
 
-from config import (
-    NUMERICAL_FEATURES,
-    CATEGORICAL_FEATURES,
-    TARGET_COLUMN,
-    TEST_SIZE,
-    RANDOM_SEED,
-    SCALER_PATH
-)
+try:
+    from .config import (
+        NUMERICAL_FEATURES,
+        CATEGORICAL_FEATURES,
+        TARGET_COLUMN,
+        TEST_SIZE,
+        RANDOM_SEED,
+        SCALER_PATH
+    )
+except ImportError:
+    from config import (
+        NUMERICAL_FEATURES,
+        CATEGORICAL_FEATURES,
+        TARGET_COLUMN,
+        TEST_SIZE,
+        RANDOM_SEED,
+        SCALER_PATH
+    )
 
 logger = logging.getLogger(__name__)
 

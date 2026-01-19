@@ -8,13 +8,22 @@ import pandas as pd
 import logging
 from pathlib import Path
 
-from config import (
-    HOUSING_DATA_PATH,
-    RANDOM_SEED,
-    LOG_LEVEL,
-    LOG_FORMAT,
-    LOG_FILE
-)
+try:
+    from .config import (
+        HOUSING_DATA_PATH,
+        RANDOM_SEED,
+        LOG_LEVEL,
+        LOG_FORMAT,
+        LOG_FILE
+    )
+except ImportError:
+    from config import (
+        HOUSING_DATA_PATH,
+        RANDOM_SEED,
+        LOG_LEVEL,
+        LOG_FORMAT,
+        LOG_FILE
+    )
 
 # Set up logging
 logging.basicConfig(

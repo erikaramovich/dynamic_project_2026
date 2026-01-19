@@ -10,7 +10,10 @@ import pandas as pd
 import logging
 from pathlib import Path
 
-from config import PROJECT_ROOT
+try:
+    from .config import PROJECT_ROOT
+except ImportError:
+    from config import PROJECT_ROOT
 
 logger = logging.getLogger(__name__)
 

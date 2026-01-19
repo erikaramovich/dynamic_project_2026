@@ -12,19 +12,34 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import joblib
 
-from config import (
-    RANDOM_SEED,
-    RF_N_ESTIMATORS,
-    RF_MAX_DEPTH,
-    RF_MIN_SAMPLES_SPLIT,
-    NN_EPOCHS,
-    NN_BATCH_SIZE,
-    NN_LEARNING_RATE,
-    NN_HIDDEN_LAYERS,
-    LINEAR_MODEL_PATH,
-    RF_MODEL_PATH,
-    NN_MODEL_PATH
-)
+try:
+    from .config import (
+        RANDOM_SEED,
+        RF_N_ESTIMATORS,
+        RF_MAX_DEPTH,
+        RF_MIN_SAMPLES_SPLIT,
+        NN_EPOCHS,
+        NN_BATCH_SIZE,
+        NN_LEARNING_RATE,
+        NN_HIDDEN_LAYERS,
+        LINEAR_MODEL_PATH,
+        RF_MODEL_PATH,
+        NN_MODEL_PATH
+    )
+except ImportError:
+    from config import (
+        RANDOM_SEED,
+        RF_N_ESTIMATORS,
+        RF_MAX_DEPTH,
+        RF_MIN_SAMPLES_SPLIT,
+        NN_EPOCHS,
+        NN_BATCH_SIZE,
+        NN_LEARNING_RATE,
+        NN_HIDDEN_LAYERS,
+        LINEAR_MODEL_PATH,
+        RF_MODEL_PATH,
+        NN_MODEL_PATH
+    )
 
 logger = logging.getLogger(__name__)
 
